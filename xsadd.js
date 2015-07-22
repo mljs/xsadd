@@ -1,17 +1,11 @@
 const LOOP = 8;
 const FLOAT_MUL = 1 / 16777216;
-const converter = new Uint32Array(1);
-
-function convert(num) {
-    converter[0] = num;
-    return converter[0];
-}
 
 function multiply_uint32(a, b) {
     var ah = (a >> 16) & 0xffff, al = a & 0xffff;
     var bh = (b >> 16) & 0xffff, bl = b & 0xffff;
     var high = ((ah * bl) + (al * bh)) & 0xffff;
-    return ((high << 16)>>>0) + (al * bl);
+    return ((high << 16) >>> 0) + (al * bl);
 }
 
 export default class XSadd {
@@ -26,9 +20,7 @@ export default class XSadd {
         this.state[2] = 0;
         this.state[3] = 0;
         for (let i = 1; i < LOOP; i++) {
-            this.state[i & 3] ^= convert(i + convert(multiply_uint32(1812433253
-                , convert(this.state[(i - 1) & 3]
-                    ^ (this.state[(i - 1) & 3] >>> 30)))));
+            this.state[i & 3] ^= (i + (multiply_uint32(1812433253, (this.state[(i - 1) & 3] ^ (this.state[(i - 1) & 3] >>> 30)) >>> 0)) >>> 0) >>> 0;
         }
         period_certification(this);
         for (let i = 0; i < LOOP; i++) {
@@ -41,7 +33,7 @@ export default class XSadd {
      */
     uint32() {
         xsadd_next_state(this);
-        return convert(this.state[3] + this.state[2]);
+        return (this.state[3] + this.state[2]) >>> 0;
     }
 
     /**
