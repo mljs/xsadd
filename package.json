@@ -1,0 +1,30 @@
+{
+  "name": "ml-xsadd",
+  "version": "1.0.0",
+  "description": "JavaScript implementation of the XORSHIFT-ADD (XSadd) pseudo random number generator",
+  "main": "xsadd-es5.js",
+  "scripts": {
+    "compile": "babel xsadd.js --out-file xsadd-es5.js",
+    "test": "npm run compile && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mljs/xsadd.git"
+  },
+  "keywords": [
+    "xsadd",
+    "xorshift",
+    "machine",
+    "learning"
+  ],
+  "author": "Michaël Zasso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mljs/xsadd/issues"
+  },
+  "homepage": "https://github.com/mljs/xsadd#readme",
+  "devDependencies": {
+    "babel": "^5.8.3",
+    "sprintf": "^0.1.5"
+  }
+}

@@ -1,3 +1,11 @@
+Original C implementation:
+XORSHIFT-ADD(xsadd) pseudo random number generator
+
+Copyright (c) 2014
+Mutsuo Saito, Makoto Matsumoto, Manieth Corp.,
+and Hiroshima University.
+All rights reserved.
+
 The MIT License (MIT)
 
 Copyright (c) 2015 ml.js
