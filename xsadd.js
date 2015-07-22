@@ -2,6 +2,18 @@ const LOOP = 8;
 const FLOAT_MUL = 1 / 16777216;
 const converter = new Uint32Array(1);
 
+function convert(num) {
+    converter[0] = num;
+    return converter[0];
+}
+
+function multiply_uint32(a, b) {
+    var ah = (a >> 16) & 0xffff, al = a & 0xffff;
+    var bh = (b >> 16) & 0xffff, bl = b & 0xffff;
+    var high = ((ah * bl) + (al * bh)) & 0xffff;
+    return ((high << 16)>>>0) + (al * bl);
+}
+
 export default class XSadd {
     constructor(seed = Date.now()) {
         this.state = new Uint32Array(4);
@@ -14,9 +26,9 @@ export default class XSadd {
         this.state[2] = 0;
         this.state[3] = 0;
         for (let i = 1; i < LOOP; i++) {
-            this.state[i & 3] ^= i + 1812433253
-                * (this.state[(i - 1) & 3]
-                    ^ (this.state[(i - 1 & 3)] >> 30));
+            this.state[i & 3] ^= convert(i + convert(multiply_uint32(1812433253
+                , convert(this.state[(i - 1) & 3]
+                    ^ (this.state[(i - 1) & 3] >>> 30)))));
         }
         period_certification(this);
         for (let i = 0; i < LOOP; i++) {
@@ -29,15 +41,14 @@ export default class XSadd {
      */
     uint32() {
         xsadd_next_state(this);
-        converter[0] = (this.state[3] + this.state[2]);
-        return converter[0];
+        return convert(this.state[3] + this.state[2]);
     }
 
     /**
      * Returns a floating point number r (0.0 <= r < 1.0)
      */
     float() {
-        return (this.uint32() >> 8) * FLOAT_MUL;
+        return (this.uint32() >>> 8) * FLOAT_MUL;
     }
 }
 
@@ -59,7 +70,7 @@ const sh3 = 11;
 function xsadd_next_state(xsadd) {
     let t = xsadd.state[0];
     t ^= t << sh1;
-    t ^= t >> sh2;
+    t ^= t >>> sh2;
     t ^= xsadd.state[3] << sh3;
     xsadd.state[0] = xsadd.state[1];
     xsadd.state[1] = xsadd.state[2];
