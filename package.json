@@ -1,6 +1,6 @@
 {
   "name": "ml-xsadd",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "JavaScript implementation of the XORSHIFT-ADD (XSadd) pseudo random number generator",
   "main": "xsadd-es5.js",
   "scripts": {
