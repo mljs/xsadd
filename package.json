@@ -34,7 +34,6 @@
     "mocha": "^2.2.5",
     "mocha-better-spec-reporter": "^2.1.1",
     "should": "^7.0.2",
-    "should-approximately-deep": "^1.1.0",
-    "sprintf": "^0.1.5"
+    "should-approximately-deep": "^1.1.0"
   }
 }
