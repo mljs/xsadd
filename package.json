@@ -2,11 +2,23 @@
   "name": "ml-xsadd",
   "version": "1.0.0",
   "description": "JavaScript implementation of the XORSHIFT-ADD (XSadd) pseudo random number generator",
-  "main": "xsadd-es5.js",
+  "main": "./lib/xsadd.js",
+  "module": "./lib-es6/xsadd.js",
+  "types": "./lib/xsadd.d.ts",
+  "files": [
+    "lib",
+    "lib-es6"
+  ],
   "scripts": {
-    "compile": "babel xsadd.js --out-file xsadd-es5.js",
-    "prepublish": "npm run compile",
-    "test": "npm run compile && mocha --require should-approximately-deep --reporter mocha-better-spec-reporter xsadd-test.js"
+    "clean": "rimraf lib lib-es6",
+    "prepublishOnly": "npm run tsc",
+    "test": "npm run test-only && npm run tslint",
+    "test-only": "jest",
+    "tsc": "npm run clean && npm run tsc-es5 && npm run tsc-es6",
+    "tsc-es5": "tsc",
+    "tsc-es6": "tsc --project tsconfig.es6.json",
+    "tslint": "tslint --project tsconfig.base.json",
+    "tslint-fix": "npm run tslint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -29,11 +41,27 @@
     "url": "https://github.com/mljs/xsadd/issues"
   },
   "homepage": "https://github.com/mljs/xsadd#readme",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
   "devDependencies": {
-    "babel": "^5.8.3",
-    "mocha": "^2.2.5",
-    "mocha-better-spec-reporter": "^2.1.1",
-    "should": "^7.0.2",
-    "should-approximately-deep": "^1.1.0"
+    "jest": "^23.5.0",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.1.3",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.14.0",
+    "typescript": "^3.0.1"
   }
 }

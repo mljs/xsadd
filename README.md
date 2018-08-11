@@ -1,12 +1,12 @@
 # xsadd
 
-  [![NPM version][npm-image]][npm-url]
-  [![build status][travis-image]][travis-url]
-  [![npm download][download-image]][download-url]
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![npm download][download-image]][download-url]
 
-JavaScript implementation of the XORSHIFT-ADD (XSadd) pseudo random number generator
+JavaScript implementation of the XORSHIFT-ADD (XSadd) pseudo random number generator.
 
-Based on the C code from https://github.com/MersenneTwister-Lab/XSadd
+Based on the C code from https://github.com/MersenneTwister-Lab/XSadd.
 
 ## Installation
 
@@ -20,15 +20,15 @@ Creates a new XSadd instance. Seed is an optional integer that defaults to `Date
 
 ### getUint32()
 
-Returns a 32-bit integer r (0 <= r < 2^32)
+Returns a 32-bit integer r (0 <= r < 2^32).
 
 ### getFloat()
 
-Returns a floating point number r (0.0 <= r < 1.0)
+Returns a floating point number r (0.0 <= r < 1.0).
 
 ### random()
 
-Like `getFloat()` but dynamically bound to the `XSadd` instance.   
+Like `getFloat()` but dynamically bound to the `XSadd` instance.  
 You can use this function externally, like `Math.random`:
 
 ```js
@@ -36,6 +36,10 @@ var XSadd = new XSadd();
 var random = xsadd.random;
 var number = random();
 ```
+
+### init(seed)
+
+Reinitialize the generator with a new seed.
 
 ## LICENSE
 
