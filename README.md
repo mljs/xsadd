@@ -1,4 +1,4 @@
-# xsadd
+# ml-xsadd
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -13,6 +13,13 @@ Based on the C code from https://github.com/MersenneTwister-Lab/XSadd.
 `$ npm install ml-xsadd`
 
 ## API
+
+```js
+const XSadd = require('ml-xsadd').default;
+
+const gen = new XSadd();
+const number = gen.getFloat();
+```
 
 ### new XSadd([seed])
 
@@ -32,9 +39,9 @@ Like `getFloat()` but dynamically bound to the `XSadd` instance.
 You can use this function externally, like `Math.random`:
 
 ```js
-var XSadd = new XSadd();
-var random = xsadd.random;
-var number = random();
+const XSadd = new XSadd();
+const random = xsadd.random;
+const number = random();
 ```
 
 ### init(seed)
