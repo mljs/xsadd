@@ -39,7 +39,7 @@ Like `getFloat()` but dynamically bound to the `XSadd` instance.
 You can use this function externally, like `Math.random`:
 
 ```js
-const XSadd = new XSadd();
+const xsadd = new XSadd();
 const random = xsadd.random;
 const number = random();
 ```
