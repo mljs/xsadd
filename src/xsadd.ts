@@ -18,6 +18,10 @@ export default class XSadd {
 
   private state: Uint32Array;
 
+  /**
+   * create an instance of XSadd with the specified seed
+   * @param [seed=Date.now()]
+   */
   constructor(seed = Date.now()) {
     this.state = new Uint32Array(4);
     this.init(seed);
@@ -41,7 +45,7 @@ export default class XSadd {
 
   public init(seed: number) {
     if (!Number.isInteger(seed)) {
-      throw new TypeError('seed must be an integer');
+      throw new TypeError("seed must be an integer");
     }
     this.state[0] = seed;
     this.state[1] = 0;
