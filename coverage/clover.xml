@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1729179121972" clover="3.2.0">
-  <project timestamp="1729179121983" name="All files">
-    <metrics statements="95" coveredstatements="65" conditionals="19" coveredconditionals="14" methods="9" coveredmethods="8" elements="123" coveredelements="87" complexity="0" loc="95" ncloc="95" packages="2" files="2" classes="2"/>
+<coverage generated="1729179379491" clover="3.2.0">
+  <project timestamp="1729179379491" name="All files">
+    <metrics statements="96" coveredstatements="66" conditionals="19" coveredconditionals="14" methods="9" coveredmethods="8" elements="124" coveredelements="88" complexity="0" loc="96" ncloc="96" packages="2" files="3" classes="3"/>
     <package name="benchmark">
       <metrics statements="22" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="index.js" path="/Users/lpatiny/git/mljs/xsadd/benchmark/index.js">
@@ -31,8 +31,8 @@
       </file>
     </package>
     <package name="src">
-      <metrics statements="73" coveredstatements="65" conditionals="18" coveredconditionals="14" methods="8" coveredmethods="8"/>
-      <file name="xsadd.ts" path="/Users/lpatiny/git/mljs/xsadd/src/xsadd.ts">
+      <metrics statements="74" coveredstatements="66" conditionals="18" coveredconditionals="14" methods="8" coveredmethods="8"/>
+      <file name="XSadd.ts" path="/Users/lpatiny/git/mljs/xsadd/src/XSadd.ts">
         <metrics statements="73" coveredstatements="65" conditionals="18" coveredconditionals="14" methods="8" coveredmethods="8"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -107,6 +107,10 @@
         <line num="91" count="118" type="stmt"/>
         <line num="92" count="118" type="stmt"/>
         <line num="93" count="10" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/lpatiny/git/mljs/xsadd/src/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
   </project>

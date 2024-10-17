@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-import XSadd from "../xsadd";
+import { XSadd } from "..";
 
 const resultUint32 = [
   1823491521, 1658333335, 1467485721, 45623648, 3336175492, 2561136018,

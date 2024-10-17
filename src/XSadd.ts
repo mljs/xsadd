@@ -13,7 +13,7 @@ function multiplyUint32(n: number, m: number) {
   return (((nhi * m) >>> 0) + nlo * m) >>> 0;
 }
 
-export default class XSadd {
+export class XSadd {
   public random: () => number;
 
   private state: Uint32Array;
@@ -56,7 +56,7 @@ export default class XSadd {
         (i +
           multiplyUint32(
             1812433253,
-            this.state[(i - 1) & 3] ^ ((this.state[(i - 1) & 3] >>> 30) >>> 0)
+            this.state[(i - 1) & 3] ^ ((this.state[(i - 1) & 3] >>> 30) >>> 0),
           )) >>>
         0;
     }
