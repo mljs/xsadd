@@ -20,18 +20,18 @@ describe("check return values", () => {
   const xsadd = new XSadd(1234);
 
   it("uint32", () => {
-    const result = [];
+    const result: number[] = [];
     for (let i = 0; i < 40; i++) {
-      const val = xsadd.getUint32();
+      const value = xsadd.getUint32();
       if (i < 20) {
-        result.push(val);
+        result.push(value);
       }
     }
     expect(result).toEqual(resultUint32);
   });
 
   it("float", () => {
-    const result = [];
+    const result: number[] = [];
     for (let i = 0; i < 20; i++) {
       result.push(xsadd.getFloat());
     }
