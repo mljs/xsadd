@@ -27,7 +27,7 @@ Based on the C code from https://github.com/MersenneTwister-Lab/XSadd.
 ## API
 
 ```js
-const XSadd = require("ml-xsadd").default;
+const { XSadd } = require("ml-xsadd");
 
 const gen = new XSadd();
 const number = gen.getFloat();
