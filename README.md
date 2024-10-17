@@ -1,7 +1,5 @@
 # ml-xsadd
 
-
-
 <h3 align="center">
   
   <a href="https://www.zakodium.com">
@@ -29,7 +27,7 @@ Based on the C code from https://github.com/MersenneTwister-Lab/XSadd.
 ## API
 
 ```js
-const XSadd = require('ml-xsadd').default;
+const XSadd = require("ml-xsadd").default;
 
 const gen = new XSadd();
 const number = gen.getFloat();
@@ -68,7 +66,7 @@ Reinitialize the generator with a new seed.
 
 [npm-image]: https://img.shields.io/npm/v/ml-xsadd.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/ml-xsadd
-[travis-image]: https://img.shields.io/travis/mljs/xsadd/master.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/mljs/xsadd/main.svg?style=flat-square
 [travis-url]: https://travis-ci.org/mljs/xsadd
 [download-image]: https://img.shields.io/npm/dm/ml-xsadd.svg?style=flat-square
 [download-url]: https://npmjs.org/package/ml-xsadd
