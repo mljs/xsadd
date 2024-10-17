@@ -5,7 +5,7 @@ const sh1 = 15;
 const sh2 = 18;
 const sh3 = 11;
 
-function multiply_uint32(n: number, m: number) {
+function multiplyUint32(n: number, m: number) {
   n >>>= 0;
   m >>>= 0;
   const nlo = n & 0xffff;
@@ -54,7 +54,7 @@ export default class XSadd {
     for (let i = 1; i < LOOP; i++) {
       this.state[i & 3] ^=
         (i +
-          multiply_uint32(
+          multiplyUint32(
             1812433253,
             this.state[(i - 1) & 3] ^ ((this.state[(i - 1) & 3] >>> 30) >>> 0)
           )) >>>
