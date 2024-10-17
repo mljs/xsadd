@@ -1,5 +1,18 @@
+# Changelog
+
+## [3.0.0](https://github.com/mljs/xsadd/compare/v2.0.0...v3.0.0) (2024-10-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* Remove default export. You need to "import {XSadd} from 'xsadd'"
+
+### Features
+
+* Remove default export. You need to "import {XSadd} from 'xsadd'" ([ac4275b](https://github.com/mljs/xsadd/commit/ac4275bc80be240358ea1b5488940c522481ff19))
+
 <a name="2.0.0"></a>
-# [2.0.0](https://github.com/mljs/xsadd/compare/v1.0.0...v2.0.0) (2018-08-11)
+## [2.0.0](https://github.com/mljs/xsadd/compare/v1.0.0...v2.0.0) (2018-08-11)
 
 
 ### Features
