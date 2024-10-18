@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/mljs/xsadd/compare/v3.0.0...v3.0.1) (2024-10-18)
+
+
+### Bug Fixes
+
+* main points to /lib/index.js ([a509dde](https://github.com/mljs/xsadd/commit/a509ddea09f73fcd2657008ae07ec6615e80bcb8))
+
 ## [3.0.0](https://github.com/mljs/xsadd/compare/v2.0.0...v3.0.0) (2024-10-17)
 
 
