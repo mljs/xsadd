@@ -2,7 +2,7 @@
   "name": "ml-xsadd",
   "version": "3.0.0",
   "description": "JavaScript implementation of the XORSHIFT-ADD (XSadd) pseudo random number generator",
-  "main": "./lib/xsadd.js",
+  "main": "./lib/index.js",
   "module": "./lib-esm/index.js",
   "types": "./lib/index.d.ts",
   "files": [
